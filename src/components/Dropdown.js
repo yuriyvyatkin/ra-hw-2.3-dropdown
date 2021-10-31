@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import items from '../data/items';
 import DropdownList from './DropdownList';
 
-export default function Dropdown() {
+export default function Dropdown({ options, preSelectedOption }) {
   const [view, setView] = useState('');
 
   function handleDropdownClick() {
@@ -19,7 +18,10 @@ export default function Dropdown() {
         <i className="material-icons">public</i>
       </button>
 
-      <DropdownList items={items} />
+      <DropdownList
+        items={options}
+        preSelectedOption={preSelectedOption}
+      />
     </div>
   );
 }
